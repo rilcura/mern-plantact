@@ -1,0 +1,167 @@
+.keynote {
+    border: 10px solid #333;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 600px) {
+    .keynote {
+        border-color: white;
+    }
+}
+
+@media (min-width: 600px) {
+    .keynote:hover {
+        transition: 0.55s 0s;
+    }
+
+    .keynote:hover img {
+        -moz-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);
+        transition: 0.55s 0s;
+    }
+}
+
+.keynote-desc {
+    background: #333;
+    height: 100%;
+    opacity: 1;
+    position: static;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0; */
+    width: 100%;
+    transition: 0.55s 0s;
+}
+
+@media (min-width: 600px) {
+    .keynote-desc {
+        background: rgba(0, 0, 0, 0.6);
+        height: 30%;
+        opacity: 1;
+        padding: 0 40px;
+        position: absolute;
+    }
+}
+
+.keynote:hover .keynote-desc {
+    background: #333;
+    height: 100%;
+    opacity: 1;
+    /* padding: 5px 20px 30px; */
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.55s 0s;
+}
+
+@media (min-width: 600px) {
+    .keynote:hover .keynote-desc {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 20px 40px;
+        position: absolute;
+    }
+}
+
+@media (min-width: 600px) {
+    .keynote:hover .keynote-bio {
+        opacity: 1;
+        margin-top: 0;
+        transition: 0.55s 0.35s;
+    }
+}
+
+@media (min-width: 600px) {
+    .keynote:hover .more {
+        margin: 25px auto;
+        transition: 0.55s 0.35s;
+    }
+}
+
+.keynote:hover .keynote-name::after {
+    border-bottom: 1px solid #ccc;
+    content: "";
+    bottom: -13px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    width: 200px;
+    transition: 0.35s 0.75s;
+}
+
+.keynote-name {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 0 15px;
+    position: relative;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .keynote-name {
+        font-size: 2em;
+    }
+}
+
+.keynote-name::after {
+    border-bottom: 1px solid #666;
+    content: "";
+    bottom: -13px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    width: 200px;
+}
+
+@media (min-width: 600px) {
+    .keynote-name::after {
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        width: 0;
+        transition: 0.35s 0s;
+    }
+}
+
+.keynote-bio {
+    color: white;
+    display: block;
+    font-size: 1.2em;
+    font-weight: 300;
+    position: relative;
+    text-align: center;
+    transition: 0.55s 0s;
+}
+
+@media (min-width: 600px) {
+    .keynote-bio {
+        margin-top: 70px;
+        opacity: 0;
+    }
+}
+
+.more {
+    background: #53A57F;
+    border-radius: 3px;
+    color: white;
+    display: block;
+    margin: 25px auto;
+    padding: 10px;
+    text-decoration: none;
+    max-width: 190px;
+}
+
+@media (min-width: 600px) {
+    .more {
+        margin: 80px auto;
+        transition: 0.55s 0s;
+    }
+}

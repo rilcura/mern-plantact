@@ -1,0 +1,18 @@
+.green-nav {
+    background-color: #385E38;
+    height: 2.2rem;
+    width: 100%;
+}
+
+.date {
+    background-color: white;
+    width: 5rem;
+    height: 3rem;
+    float: right;
+    translate: 16px -16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-top-right-radius: 5px;
+    font-size: larger;
+}
