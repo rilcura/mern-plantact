@@ -59,12 +59,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rilcura/mern-plantact-webapp.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rilcura/mern-plantact-webapp/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/rilcura/mern-plantact-webapp#readme"
+  "homepage": ""
 }
