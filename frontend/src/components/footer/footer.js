@@ -95,7 +95,7 @@ function FooterGlobal() {
 
                             <Col md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
                                 <h6 className='fw-bold mb-4'>Follow us</h6>
-                                <a href='https://www.facebook.com/DENREMBR3' className='text-primary' target="_blank" rel="noreferrer">
+                                <a href='https://www.facebook.com/DENR3Official' className='text-primary' target="_blank" rel="noreferrer">
                                     <img
                                         className=""
                                         src={Facebook}

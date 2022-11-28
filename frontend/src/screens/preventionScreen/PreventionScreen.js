@@ -218,10 +218,7 @@ function PreventionScreen() {
                 <h2 className='pt-5 roboto-condensed-b'>ENVIRONMENTAL PREVENTION
                 </h2><h2 className='roboto-condensed-b'>&</h2><h2 className='roboto-condensed-b'> SAFETY VIDEOS</h2>
 
-                <YoutubeEmbed embedId='https://www.youtube.com/watch?v=Lf2WZe0b9GE' />
                 <YoutubeEmbed embedId='https://www.youtube.com/watch?v=IIxo3XuYRLQ&list=PLiNxrElVnlzDkqZsnrpP-FXJfyC-SzgNw' />
-                <YoutubeEmbed embedId='https://www.youtube.com/watch?v=uFQhHHTvP8Y' />
-                <YoutubeEmbed embedId='https://www.youtube.com/watch?v=7XqJIsBqMUk' />
                 <YoutubeEmbed embedId='https://www.youtube.com/watch?v=O-CDaVRHR1Q&list=PLiNxrElVnlzDkqZsnrpP-FXJfyC-SzgNw&index=2' />
                 <YoutubeEmbed embedId='https://www.youtube.com/watch?v=ORQ1jlL0a3E&list=PLiNxrElVnlzDkqZsnrpP-FXJfyC-SzgNw&index=8' />
 

@@ -17,5 +17,5 @@ left: 49%;
 z-index: 50;
 font-size: 3rem;
 cursor: pointer;
-color: red;
+color: black;
 `
