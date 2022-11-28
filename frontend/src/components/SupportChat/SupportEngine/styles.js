@@ -5,7 +5,7 @@ export const styles = {
         // Border
         borderRadius: '50%',
         // Background 
-        backgroundImage: `url(https://scontent-jnb1-1.xx.fbcdn.net/v/t39.30808-6/294568277_489296609868039_7411800368003627309_n.png?_nc_cat=101&ccb=1-7&_nc_sid=973b4a&_nc_ohc=VQsWOR05tBgAX-dBHvJ&_nc_ht=scontent-jnb1-1.xx&oh=00_AfAZvtT0G_tQDi0liw2RIdzNAm-4SKN9jvfqq--wFhRhcg&oe=63812FAE)`,
+        backgroundImage: `url(https://imgur.com/lnnpPWP)`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: '84px',
