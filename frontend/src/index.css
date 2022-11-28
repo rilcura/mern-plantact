@@ -190,15 +190,3 @@ button.thumbnail {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
 }
-
-/* .chatWithMeButton {
-  cursor: pointer;
-  box-shadow: 0px 0px 16px 6px rgba(0, 0, 0, 0.33);
-  border-radius: 50%;
-  background-image: url('');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 84px;
-  width: 84px;
-  height: 84px;
-} */

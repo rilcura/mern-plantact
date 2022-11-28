@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { styles } from "./styles";
+import denrlogo from "../../../images/denrlogo.png"
 
 const Avatar = props => {
 
@@ -26,7 +27,10 @@ const Avatar = props => {
                 onClick={() => props.onClick && props.onClick()}
                 style={{
                     ...styles.chatWithMeButton,
-                    ...{ border: hovered ? '1px solid #f9f0ff' : '4px solid green' }
+                    ...{
+                        border: hovered ? '1px solid #f9f0ff' : '4px solid green',
+                        backgroundImage: `url(${denrlogo})`
+                    }
                 }}>
 
             </div>
