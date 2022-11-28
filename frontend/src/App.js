@@ -89,7 +89,7 @@ function App() {
                       </NavDropdown>
                     </>
                   ) : (
-                    <Link className="nav-link" path="/signin">
+                    <Link className="nav-link" to="/signin">
                       Sign In
                     </Link>
                   )}
