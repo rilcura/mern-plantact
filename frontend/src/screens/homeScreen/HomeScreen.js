@@ -52,16 +52,16 @@ function HomeScreen() {
         </Row>
       </Container>
       <Container className="pt-4">
-        <Row>
+        <Row className='gy-3'>
           <Col>
             <Card className="p-4 bg-dark text-white" style={{ height: '257px' }}>
               <Card.Title as="h3" className='secular-heading'>PARTNERSHIP FORGED TOWARDS PROTECTION, REFORESTATION OF MOUNT ARAYAT</Card.Title>
               <Card.Subtitle className='text-muted pt-2 roboto-p'>
                 Published: 29 September 2022
               </Card.Subtitle>
-              <Card.Body>
+              <Card.Body className='d-flex align-items-end justify-content-end'>
                 <a href='https://r3.denr.gov.ph/index.php/news-events/photo-releases/1432-partnership-forged-towards-protection-reforestation-of-mount-arayat' target="_blank" rel="noreferrer" className='text-primary'>
-                  <Button variant="success" className='d-flex float-end'>LEARN MORE</Button></a>
+                  <Button variant="success" >LEARN MORE</Button></a>
               </Card.Body>
             </Card>
           </Col>
@@ -72,9 +72,9 @@ function HomeScreen() {
               <Card.Subtitle className='text-muted pt-2 roboto-p'>
                 Published: 20 September 2022
               </Card.Subtitle>
-              <Card.Body>
+              <Card.Body className='d-flex align-items-end justify-content-end'>
                 <a href="https://r3.denr.gov.ph/index.php/news-events/press-releases/1430-denr-partners-hold-massive-coastal-cleanup-drive#:~:text=The%20Department%20of%20Environment%20and,the%20region's%20waterways%20and%20coastlines." target="_blank" rel="noreferrer" className='text-primary'>
-                  <Button variant="success" className='d-flex float-end'>LEARN MORE</Button>
+                  <Button variant="success">LEARN MORE</Button>
                 </a>
               </Card.Body>
             </Card>
