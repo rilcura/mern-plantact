@@ -79,13 +79,13 @@ function App() {
                           <NavDropdown.Item>Profile</NavDropdown.Item>
                         </LinkContainer>
                         <NavDropdown.Divider />
-                        <LinkContainer
+                        <Link
                           className="dropdown-item"
                           to="#signout"
                           onClick={signoutHandler}
                         >
                           Sign Out
-                        </LinkContainer>
+                        </Link>
                       </NavDropdown>
                     </>
                   ) : (
