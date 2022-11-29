@@ -21,6 +21,7 @@ import FooterGlobal from '../../components/footer/footer';
 import PreventionsCarousel from '../../components/carousel2/Carousel_Prevention';
 import ScrollButton from '../../components/ScrollButton';
 import YoutubeEmbed from '../../components/YoutubeEmbed';
+import SupportEngine from '../../components/SupportChat/SupportEngine';
 
 console.log(preventions1)
 console.log(preventions2)
@@ -238,7 +239,7 @@ function PreventionScreen() {
             {/* Divider end */}
             <ScrollButton />
             <FooterGlobal />
-
+            <SupportEngine />
         </>
     );
 }
