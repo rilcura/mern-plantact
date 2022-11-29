@@ -21,7 +21,7 @@ function LatestNews() {
                     <h1 className="roboto-condensed-b">LATEST NEWS</h1>
                     <Row className="g-4">
                         <Col lg={4}>
-                            <Card className="bg-light text-center" style={{ height: '360px' }}>
+                            <Card className="bg-light text-center h-100">
                                 <a href="https://r3.denr.gov.ph/index.php/news-events/regional-releases/1109-denr-approves-forest-land-use-plans-of-4-lgus-in-region-6" target="_blank" rel="noreferrer" className="text-dark">
                                     <div>
 
@@ -41,7 +41,7 @@ function LatestNews() {
                             </Card>
                         </Col>
                         <Col lg={4}>
-                            <Card className="bg-light text-center" style={{ height: '360px' }}>
+                            <Card className="bg-light text-center h-100">
                                 <a href="https://r3.denr.gov.ph/index.php/news-events/regional-releases/1228-denr-seizes-illegally-cut-lumber-in-n-ecija" target="_blank" rel="noreferrer" className="text-dark">
                                     <div className="">
                                         <img
@@ -59,7 +59,7 @@ function LatestNews() {
                             </Card>
                         </Col>
                         <Col lg={4}>
-                            <Card className="bg-light text-center" style={{ height: '360px' }}>
+                            <Card className="bg-light text-center h-100">
                                 <a href="https://r3.denr.gov.ph/index.php/news-events/regional-releases/1210-bamboo-can-help-increase-ph-s-forest-cover" target="_blank" rel="noreferrer" className="text-dark">
                                     <div className="">
                                         <img
