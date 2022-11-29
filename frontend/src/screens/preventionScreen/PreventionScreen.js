@@ -20,7 +20,6 @@ import Button from 'react-bootstrap/esm/Button';
 import FooterGlobal from '../../components/footer/footer';
 import PreventionsCarousel from '../../components/carousel2/Carousel_Prevention';
 import ScrollButton from '../../components/ScrollButton';
-import SupportEngine from '../../components/SupportChat/SupportEngine';
 import YoutubeEmbed from '../../components/YoutubeEmbed';
 
 console.log(preventions1)
@@ -66,7 +65,7 @@ function PreventionScreen() {
                     </Col>
                     <Col xs={5} lg={4} className>
                         <img
-                            className='w-100'
+                            className='w-100 d-none d-sm-block'
                             src={preventions1}
                             alt="DENR's greening program vital to climate change mitigation"
                         />
@@ -77,86 +76,97 @@ function PreventionScreen() {
             <Container className='text-center'>
                 <h3 className='roboto-condensed-b'>RECENT PROJECTS/CAMPAIGNS</h3>
                 <Row>
-                    <Col xs={12} md={6} lg={4} className='keynote '>
-                        <img
-                            className='w-100'
-                            src={preventions6}
-                            alt=""
-                        />
-                        <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
-                            <p className='keynote-bio'>DENR, partners plant trees to boost rehab, conservation efforts of C. Luzon forestlands
-                            </p>
-                            <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1417-denr-partners-plant-trees-to-boost-rehab-conservation-efforts-of-c-luzon-forestlands?highlight=WyJwYXJ0bmVycyIsInBhcnRuZXJzJyIsInBsYW50IiwicGxhbnQncyIsInRyZWVzIiwidG8iLCJib29zdCIsInJlaGFiIiwiY29uc2VydmF0aW9uIiwiZWZmb3J0cyIsIm9mIiwiYyIsImx1em9uIiwibHV6b24ncyIsImZvcmVzdGxhbmRzIiwicGFydG5lcnMgcGxhbnQiLCJwYXJ0bmVycyBwbGFudCB0cmVlcyIsInBsYW50IHRyZWVzIiwicGxhbnQgdHJlZXMgdG8iLCJ0cmVlcyB0byIsInRyZWVzIHRvIGJvb3N0IiwidG8gYm9vc3QiLCJ0byBib29zdCByZWhhYiIsImJvb3N0IHJlaGFiIiwiYm9vc3QgcmVoYWIgY29uc2VydmF0aW9uIiwicmVoYWIgY29uc2VydmF0aW9uIiwicmVoYWIgY29uc2VydmF0aW9uIGVmZm9ydHMiLCJjb25zZXJ2YXRpb24gZWZmb3J0cyIsImNvbnNlcnZhdGlvbiBlZmZvcnRzIG9mIiwiZWZmb3J0cyBvZiIsImVmZm9ydHMgb2YgYyIsIm9mIGMiLCJvZiBjIGx1em9uIiwiYyBsdXpvbiIsImMgbHV6b24gZm9yZXN0bGFuZHMiLCJsdXpvbiBmb3Jlc3RsYW5kcyJd' target="_blank" rel="noreferrer" className='text-reset text-decoration-none'>
-                                <Button variant='success'>READ MORE</Button>
-                            </a>
+                    <Col xs={12} md={6} lg={4}>
+                        <div className='keynote'>
+                            <img
+                                className='w-100 h-100'
+                                src={preventions6}
+                                alt=""
+                            />
+                            <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
+                                <p className='keynote-bio'>DENR, partners plant trees to boost rehab, conservation efforts of C. Luzon forestlands
+                                </p>
+                                <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1417-denr-partners-plant-trees-to-boost-rehab-conservation-efforts-of-c-luzon-forestlands?highlight=WyJwYXJ0bmVycyIsInBhcnRuZXJzJyIsInBsYW50IiwicGxhbnQncyIsInRyZWVzIiwidG8iLCJib29zdCIsInJlaGFiIiwiY29uc2VydmF0aW9uIiwiZWZmb3J0cyIsIm9mIiwiYyIsImx1em9uIiwibHV6b24ncyIsImZvcmVzdGxhbmRzIiwicGFydG5lcnMgcGxhbnQiLCJwYXJ0bmVycyBwbGFudCB0cmVlcyIsInBsYW50IHRyZWVzIiwicGxhbnQgdHJlZXMgdG8iLCJ0cmVlcyB0byIsInRyZWVzIHRvIGJvb3N0IiwidG8gYm9vc3QiLCJ0byBib29zdCByZWhhYiIsImJvb3N0IHJlaGFiIiwiYm9vc3QgcmVoYWIgY29uc2VydmF0aW9uIiwicmVoYWIgY29uc2VydmF0aW9uIiwicmVoYWIgY29uc2VydmF0aW9uIGVmZm9ydHMiLCJjb25zZXJ2YXRpb24gZWZmb3J0cyIsImNvbnNlcnZhdGlvbiBlZmZvcnRzIG9mIiwiZWZmb3J0cyBvZiIsImVmZm9ydHMgb2YgYyIsIm9mIGMiLCJvZiBjIGx1em9uIiwiYyBsdXpvbiIsImMgbHV6b24gZm9yZXN0bGFuZHMiLCJsdXpvbiBmb3Jlc3RsYW5kcyJd' target="_blank" rel="noreferrer" className='text-reset text-decoration-none'>
+                                    <Button variant='success'>READ MORE</Button>
+                                </a>
+                            </div>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={4} className='keynote'>
-                        <img
-                            className='w-100 h-100'
-                            src={preventions3}
-                            alt=""
-                        />
-                        <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
-                            <p className='keynote-bio'>DENR, partners hold massive coastal cleanup drive
+                    <Col xs={12} md={6} lg={4} >
+                        <div className='keynote'>
+                            <img
+                                className='w-auto'
+                                height={'253px'}
+                                src={preventions3}
+                                alt=""
+                            />
+                            <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
+                                <p className='keynote-bio'>DENR, partners hold massive coastal cleanup drive
 
-                            </p>
-                            <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1430-denr-partners-hold-massive-coastal-cleanup-drive?highlight=WyJwYXJ0bmVycyIsInBhcnRuZXJzJyIsImhvbGQiLCJtYXNzaXZlIiwiY29hc3RhbCIsImNsZWFudXAiLCJkcml2ZSIsInBhcnRuZXJzIGhvbGQiLCJwYXJ0bmVycyBob2xkIG1hc3NpdmUiLCJob2xkIG1hc3NpdmUiLCJob2xkIG1hc3NpdmUgY29hc3RhbCIsIm1hc3NpdmUgY29hc3RhbCIsIm1hc3NpdmUgY29hc3RhbCBjbGVhbnVwIiwiY29hc3RhbCBjbGVhbnVwIiwiY29hc3RhbCBjbGVhbnVwIGRyaXZlIiwiY2xlYW51cCBkcml2ZSJd' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
-                                <Button variant='success'>READ MORE</Button>
-                            </a>
+                                </p>
+                                <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1430-denr-partners-hold-massive-coastal-cleanup-drive?highlight=WyJwYXJ0bmVycyIsInBhcnRuZXJzJyIsImhvbGQiLCJtYXNzaXZlIiwiY29hc3RhbCIsImNsZWFudXAiLCJkcml2ZSIsInBhcnRuZXJzIGhvbGQiLCJwYXJ0bmVycyBob2xkIG1hc3NpdmUiLCJob2xkIG1hc3NpdmUiLCJob2xkIG1hc3NpdmUgY29hc3RhbCIsIm1hc3NpdmUgY29hc3RhbCIsIm1hc3NpdmUgY29hc3RhbCBjbGVhbnVwIiwiY29hc3RhbCBjbGVhbnVwIiwiY29hc3RhbCBjbGVhbnVwIGRyaXZlIiwiY2xlYW51cCBkcml2ZSJd' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
+                                    <Button variant='success'>READ MORE</Button>
+                                </a>
+                            </div>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={4} className='keynote'>
-                        <img
-                            className='w-100 h-100'
-                            src={preventions4}
-                            alt=""
-                        />
-                        <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
-                            <p className='keynote-bio'>DENR plants bamboos in Bamban River to boost reforestation, Manila Bay rehab efforts
+                    <Col xs={12} md={6} lg={4} >
+                        <div className='keynote'>
+                            <img
+                                className='w-100 h-100'
+                                src={preventions4}
+                                alt=""
+                            />
+                            <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
+                                <p className='keynote-bio'>DENR plants bamboos in Bamban River to boost reforestation, Manila Bay rehab efforts
 
-                            </p>
-                            <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1381-denr-plants-3-600-bamboo-propagules-to-boost-manila-bay-rehab-reforestation-efforts?highlight=WyJwbGFudCIsInBsYW50J3MiLCJiYW1ib29zIl0=' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
-                                <Button variant='success'>READ MORE</Button>
-                            </a>
+                                </p>
+                                <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1381-denr-plants-3-600-bamboo-propagules-to-boost-manila-bay-rehab-reforestation-efforts?highlight=WyJwbGFudCIsInBsYW50J3MiLCJiYW1ib29zIl0=' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
+                                    <Button variant='success'>READ MORE</Button>
+                                </a>
+                            </div>
                         </div>
                     </Col>
                 </Row>
                 {/* Row 2 */}
                 <Row className='d-flex align-items-center justify-content-center'>
-                    <Col xs={12} md={6} lg={4} className='keynote'>
-                        <img
-                            className='w-100 h-100'
-                            src={preventions5}
-                            alt=""
-                        />
-                        <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
-                            <p className='keynote-bio'>STATE WORKERS, PARTNERS PLANT TREES TO CONSERVE C. LUZON FORESTLANDS
+                    <Col xs={12} md={6} lg={4}>
+                        <div className='keynote'>
+                            <img
+                                className='w-100 h-100'
+                                src={preventions5}
+                                alt=""
+                            />
+                            <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
+                                <p className='keynote-bio'>STATE WORKERS, PARTNERS PLANT TREES TO CONSERVE C. LUZON FORESTLANDS
 
-                            </p>
-                            <a href='https://r3.denr.gov.ph/index.php/news-events/photo-releases/1429-state-workers-partners-plant-trees-to-conserve-c-luzon-forestlands?highlight=WyJzdGF0ZSIsInN0YXRlJ3MiLCJ3b3JrZXJzIiwic3RhdGUgd29ya2VycyJd' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
-                                <Button variant='success'>READ MORE</Button>
-                            </a>
+                                </p>
+                                <a href='https://r3.denr.gov.ph/index.php/news-events/photo-releases/1429-state-workers-partners-plant-trees-to-conserve-c-luzon-forestlands?highlight=WyJzdGF0ZSIsInN0YXRlJ3MiLCJ3b3JrZXJzIiwic3RhdGUgd29ya2VycyJd' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
+                                    <Button variant='success'>READ MORE</Button>
+                                </a>
+                            </div>
                         </div>
                     </Col>
-                    <Col xs={12} md={6} lg={4} className='keynote'>
-                        <img
-                            className='w-100'
-                            src={preventions2}
-                            alt=""
-                        />
-                        <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
-                            <p className='keynote-bio'>Youth leaders, IPs convene towards climate action
-                            </p>
-                            <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1425-youth-leaders-ips-convene-towards-climate-action?highlight=WyJ5b3V0aCIsImxlYWRlcnMiLCJsZWFkZXJzJyIsInlvdXRoIGxlYWRlcnMiXQ==' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
-                                <Button variant='success'>READ MORE</Button>
-                            </a>
+                    <Col xs={12} md={6} lg={4} >
+                        <div className='keynote'>
+                            <img
+                                className='w-100 h-100'
+                                src={preventions2}
+                                alt=""
+                            />
+                            <div className='keynote-desc d-flex flex-column align-items-center justify-content-center'>
+                                <p className='keynote-bio'>Youth leaders, IPs convene towards climate action
+                                </p>
+                                <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1425-youth-leaders-ips-convene-towards-climate-action?highlight=WyJ5b3V0aCIsImxlYWRlcnMiLCJsZWFkZXJzJyIsInlvdXRoIGxlYWRlcnMiXQ==' target="_blank" rel="noreferrer" className='text-reset d-flex align-items-center justify-content-center text-decoration-none'>
+                                    <Button variant='success'>READ MORE</Button>
+                                </a>
+                            </div>
                         </div>
                     </Col>
                 </Row>
             </Container>
             {/* WHAT CAN YOU SECTION */}
-            <Container className='mt-4 text-center'>
+            <Container className='mt-4 text-center d-none d-sm-block'>
                 <h3 className='bg-light roboto-condensed-b'>WHAT CAN "YOU" DO??</h3>
                 <div className='d-flex align-items-center justify-content-center'>
                     <Row className='g-5 mt-2'>
@@ -164,7 +174,7 @@ function PreventionScreen() {
                         <Col lg={4}>
                             <h4>WASTE MANAGEMENT</h4>
                             <img
-                                className='w-100'
+                                className=''
                                 src={preventions7}
                                 alt=""
                             />
@@ -172,7 +182,7 @@ function PreventionScreen() {
                         <Col lg={4}>
                             <h4>PLANT TREES</h4>
                             <img
-                                className='w-100'
+                                className=''
                                 src={preventions8}
                                 alt=""
                             />
@@ -180,7 +190,7 @@ function PreventionScreen() {
                         <Col lg={4}>
                             <h4>EDUCATION</h4>
                             <img
-                                className='w-100'
+                                className=''
                                 src={preventions9}
                                 alt=""
                             />
@@ -204,7 +214,7 @@ function PreventionScreen() {
                         <Col lg={4}>
                             <h4>SUPPORT BIODIVERSITY</h4>
                             <img
-                                className='w-100'
+                                className=''
                                 src={preventions12}
                                 alt=""
                             />
@@ -228,7 +238,6 @@ function PreventionScreen() {
             {/* Divider end */}
             <ScrollButton />
             <FooterGlobal />
-            <SupportEngine />
 
         </>
     );
