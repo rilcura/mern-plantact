@@ -26,43 +26,6 @@ function NewScreen() {
                 <title>News</title>
             </Helmet>
             <Carousel3 />
-            {/* <Container fluid className='bg-success bg-opacity-75 pt-3'>
-                <Container className="border-bottom border-dark"></Container>
-                <Container>
-                    <Row>
-                        <Col>
-                            <Button variant='success' className='my-1'>
-                                Breaking News
-                            </Button>
-                        </Col>
-                        <Col lg={2}>
-                            <Button variant='success' className='my-1 pe-5 border-dark'>
-                                Searchbar
-                            </Button>
-                        </Col>
-                    </Row>
-                </Container>
-                <Container className="border-top border-dark pb-3">
-                </Container>
-            </Container> */}
-
-            {/* <Container fluid className='bg-success bg-opacity-75 pt-3'>
-                <Container className="border-bottom border-dark"></Container>
-                <Container>
-                    <Row>
-                        <Col>
-                            <Button variant='success' className='my-2 px-4'>
-                                Reports
-                            </Button>
-                        </Col>
-                        <Col lg={2}>
-                            <CreatePost />
-                        </Col>
-                    </Row>
-                </Container>
-                <Container className="border-top border-dark pb-3">
-                </Container>
-            </Container> */}
             <Container fluid className="border-bottom border-top mt-4 border-2">
                 <div className='text-center my-5 mx-5'><h3>
                     Keep up-to-date with what’s happening to our planet with the latest
@@ -101,6 +64,7 @@ function NewScreen() {
                                                 className='w-100'
                                                 src={news4}
                                                 alt="News 3"
+                                                style={{ height: '449px' }}
                                             />
                                         </div>
                                         <Card.Title as="p" className="p-3"><h5 className='fw-bold'>RIVER CLEANUP INITIATIVE CUTS WASTE FROM POLLUTING CALUMPIT WATERWAYS</h5>
@@ -157,7 +121,7 @@ function NewScreen() {
                         </Row>
                     </Col>
                     {/* Current Topics */}
-                    <Col>
+                    <Col className='gy-4 pb-4'>
                         <h1 className='text-center border-bottom mb-3 pb-2'>Current Topics</h1>
 
                         {/* Current topics 1 */}
