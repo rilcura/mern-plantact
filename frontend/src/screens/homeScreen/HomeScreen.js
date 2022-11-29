@@ -151,7 +151,9 @@ function HomeScreen() {
               textAlign: 'center',
               fontSize: '22px',
               lineHeight: '26px',
-              letterSpacing: '0.2em'
+              letterSpacing: '0.2em',
+              paddingBottom: '1.5rem',
+              paddingTop: '1.5rem',
             }}>
             MAY WE ALL REMEMBER THAT WE ARE NOT JUST CUSTODIANS OR GUARDIANS OF NATURE, BUT WE ARE PART OF IT.<br /><br /> HOW WE WORK TOGETHER DETERMINES MUCH OF HOW WE FACE THE FUTURE AS A SPECIES.<br /><br /> KAYA SAMA-SAMA, TULONG-TULONG SA PANGANGALAGA NG KAPALIGIRAN DAHIL IKAW, AKO, TAYO ANG KALIKASAN!
 
