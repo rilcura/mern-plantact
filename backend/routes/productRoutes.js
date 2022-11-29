@@ -19,7 +19,8 @@ productRouter.post(
   expressAsyncHandler(async (req, res) => {
     const newProduct = new Product({
       name: 'Enter name ' + Date.now(),
-      image: 'Enter URL',
+      image: 'Enter Image URL',
+      videoLink: 'Enter Video Link',
       description: 'Enter description',
       date: 'Enter date',
       location: 'Enter location',
@@ -40,6 +41,7 @@ productRouter.put(
     if (product) {
       product.name = req.body.name;
       product.image = req.body.image;
+      product.videoLink = req.body.videoLink;
       product.description = req.body.description;
       product.date = req.body.date;
       product.location = req.body.location;

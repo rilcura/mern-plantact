@@ -55,6 +55,7 @@ export default function ProductEditScreen() {
 
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
+  const [videoLink, setVideoLink] = useState('');
   const [description, setDescription] = useState('');
   const [date, setDate] = useState('');
   const [location, setLocation] = useState('');
@@ -66,6 +67,7 @@ export default function ProductEditScreen() {
         const { data } = await axios.get(`/api/products/${productId}`);
         setName(data.name);
         setImage(data.image);
+        setVideoLink(data.videoLink);
         setDescription(data.description);
         setDate(data.date);
         setLocation(data.location);
@@ -90,6 +92,7 @@ export default function ProductEditScreen() {
           _id: productId,
           name,
           image,
+          videoLink,
           description,
           date,
           location,
@@ -136,6 +139,15 @@ export default function ProductEditScreen() {
               <Form.Control
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="videoLink">
+              <Form.Label>Video Link</Form.Label>
+              <Form.Control
+                value={videoLink}
+                onChange={(e) => setVideoLink(e.target.value)}
                 required
               />
             </Form.Group>
