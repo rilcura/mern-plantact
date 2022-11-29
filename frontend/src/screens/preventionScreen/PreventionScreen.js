@@ -215,7 +215,7 @@ function PreventionScreen() {
                         <Col lg={4}>
                             <h4>SUPPORT BIODIVERSITY</h4>
                             <img
-                                className=''
+                                className='w-100'
                                 src={preventions12}
                                 alt=""
                             />

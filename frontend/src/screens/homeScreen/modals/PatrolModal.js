@@ -34,12 +34,12 @@ function PatrolModal() {
 
                 <Modal.Body className='text-center'>
                     <img
-                        className=""
+                        className="w-100"
                         src={patrol1}
                         alt="logo1"
                     />
                     <img
-                        className=""
+                        className="w-100"
                         src={patrol2}
                         alt="logo1"
                     />
