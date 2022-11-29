@@ -100,70 +100,72 @@ export default function ProfileScreen() {
 
   return (
     <>
-      <Container fluid className="login-image text-white vh-100 d-flex align-items-center justify-content-center">
+      <Container fluid className="login-image text-white min-vh-100 d-flex align-items-center justify-content-center">
         <Helmet>
           <title>User Profile</title>
         </Helmet>
-        <Container className='small-container p-4 rounded'>
+        <div className='my-5'>
+          <Container className='small-container p-4 rounded'>
 
-          <h1 className="my-3 text-center">User Profile</h1>
-          <Form onSubmit={submitHandler}>
-            <Row>
-              <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="name">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group as={Col} className="mb-3" controlId="municipality">
-                <Form.Label>Municipality</Form.Label>
-                <Form.Control
-                  type="municipality"
-                  value={municipality}
-                  required
-                  onChange={(e) => setMunicipality(e.target.value)}>
-                </Form.Control >
-              </Form.Group >
-              <Form.Group as={Col} className="mb-3" controlId="barangay">
-                <Form.Label>Barangay</Form.Label>
-                <Form.Control
-                  type="barangay"
-                  value={barangay}
-                  required
-                  onChange={(e) => setBarangay(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="password">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-              </Form.Group>
-              <div className="mb-3 d-grid pt-1">
-                <Button type="submit" variant="success" size="lg" className='light-green'>Update</Button>
-              </div>
-            </Row>
-          </Form>
-        </Container>
+            <h1 className="my-3 text-center">User Profile</h1>
+            <Form onSubmit={submitHandler}>
+              <Row>
+                <Form.Group className="mb-3" controlId="name">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="name">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group as={Col} className="mb-3" controlId="municipality">
+                  <Form.Label>Municipality</Form.Label>
+                  <Form.Control
+                    type="municipality"
+                    value={municipality}
+                    required
+                    onChange={(e) => setMunicipality(e.target.value)}>
+                  </Form.Control >
+                </Form.Group >
+                <Form.Group as={Col} className="mb-3" controlId="barangay">
+                  <Form.Label>Barangay</Form.Label>
+                  <Form.Control
+                    type="barangay"
+                    value={barangay}
+                    required
+                    onChange={(e) => setBarangay(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="password">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="password">
+                  <Form.Label>Confirm Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                  />
+                </Form.Group>
+                <div className="mb-3 d-grid pt-1">
+                  <Button type="submit" variant="success" size="lg" className='light-green'>Update</Button>
+                </div>
+              </Row>
+            </Form>
+          </Container>
+        </div>
       </Container >
     </>
   );
