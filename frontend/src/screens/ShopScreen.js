@@ -47,31 +47,33 @@ function ShopScreen() {
     }, []);
 
     return (
-        <Container fluid>
-            <div>
-                <Helmet>
-                    <title>Reports</title>
-                </Helmet>
+        <>
+            <Container fluid>
+                <div>
+                    <Helmet>
+                        <title>Reports</title>
+                    </Helmet>
 
-                <div className="products vh-100">
-                    {loading ? (
-                        <LoadingBox />
-                    ) : error ? (
-                        <MessageBox variant="danger">{error}</MessageBox>
-                    ) : (
+                    <div className="text-center">
+                        {loading ? (
+                            <LoadingBox />
+                        ) : error ? (
+                            <MessageBox variant="danger">{error}</MessageBox>
+                        ) : (
 
-                        <Row className='gy-5 gx-2'>
-                            {products.map((product) => (
-                                <Col key={product.slug} sm={6} md={4} lg={3} xxl={3} className="mb-3" style={{ height: '370px' }}>
-                                    <Product product={product}></Product>
-                                </Col>
-                            ))}
-                        </Row>
-                    )}
-                    <FooterGlobal2 />
+                            <Row className='d-flex justify-content-center'>
+                                {products.map((product) => (
+                                    <Col key={product._id} sm={6} md={4} lg={3} xxl={3} style={{ height: '370px' }}>
+                                        <Product product={product}></Product>
+                                    </Col>
+                                ))}
+                            </Row>
+                        )}
+                    </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+            <FooterGlobal2 />
+        </>
     );
 }
 export default ShopScreen;
