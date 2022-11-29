@@ -112,7 +112,7 @@ function ServiceScreen() {
                         <h1>VOLUNTEER OPPORTUNITIES / ORGANIZATIONS</h1>
                         <Container className='px-4 pt-3'>
 
-                            <Row className='d-flex align-items-center justify-content-center g-4'>
+                            <Row className='g-3'>
                                 <Col lg={4}>
                                     <a href='https://www.facebook.com/DENR3Official/posts/pfbid02zrXv9LJagFoTHpnotxWMrwoWUxdvscK7PZBrecSVCjstaGgbDfQatpqcDEUo5pFol' target="_blank" rel="noreferrer" className="text-dark text-decoration-none">
                                         <img
@@ -137,7 +137,7 @@ function ServiceScreen() {
                                     </p>
                                 </Col>
                             </Row>
-                            <Row className='d-flex align-items-center justify-content-center g-4 pt-4'>
+                            <Row className='g-3 pt-4'>
                                 <Col lg={4}>
                                     <a href='https://www.facebook.com/DENR3Official/posts/pfbid02PsdNxwCTayaqezyRsDJoFatCNTCoYBRLafnStxQS6Nqy57sxas27frbcnuaeqJqsl' target="_blank" rel="noreferrer" className="text-dark text-decoration-none">
                                         <img
@@ -168,7 +168,7 @@ function ServiceScreen() {
                                     </p>
                                 </Col>
                             </Row>
-                            <Row className='d-flex align-items-center justify-content-center g-4 pt-4'>
+                            <Row className='g-3 pt-4'>
                                 <Col lg={4}>
                                     <a href='https://r3.denr.gov.ph/index.php/news-events/press-releases/1409-denr-s-greening-program-vital-to-climate-change-mitigation?highlight=WyJncmVlbmluZyIsInByb2dyYW0iLCJwcm9ncmFtJ3MiLCJ2aXRhbCIsInRvIiwiY2xpbWF0ZSIsImNoYW5nZSIsIm1pdGlnYXRpb24iLCJncmVlbmluZyBwcm9ncmFtIiwiZ3JlZW5pbmcgcHJvZ3JhbSB2aXRhbCIsInByb2dyYW0gdml0YWwiLCJwcm9ncmFtIHZpdGFsIHRvIiwidml0YWwgdG8iLCJ2aXRhbCB0byBjbGltYXRlIiwidG8gY2xpbWF0ZSIsInRvIGNsaW1hdGUgY2hhbmdlIiwiY2xpbWF0ZSBjaGFuZ2UiLCJjbGltYXRlIGNoYW5nZSBtaXRpZ2F0aW9uIiwiY2hhbmdlIG1pdGlnYXRpb24iXQ==' target="_blank" rel="noreferrer" className="text-dark text-decoration-none">
                                         <img
