@@ -90,7 +90,7 @@ export default function ProfileScreen() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      toast.success('User updated successfully');
+      toast.success('Profile updated successfully');
       navigate('/');
     } catch (error) {
       toast.error(getError(error));
