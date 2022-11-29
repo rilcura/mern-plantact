@@ -47,7 +47,7 @@ function App() {
           <Navbar bg="success" variant="dark" expand="lg">
             <Container>
 
-              <LinkContainer to="#">
+              <LinkContainer to="/">
                 <Navbar.Brand className='font-logo '>PlantAct</Navbar.Brand>
               </LinkContainer>
 

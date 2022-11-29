@@ -17,7 +17,8 @@ const SupportWindow = props => {
                 ...styles.supportWindow,
                 ...{
                     opacity: props.visible ? '1' : '0',
-                    right: props.visible ? '24px' : 'calc(-25%)'
+                    // Chat window hidden
+                    right: props.visible ? '24px' : 'calc(-75%)'
                 }
             }}>
             <EmailForm
