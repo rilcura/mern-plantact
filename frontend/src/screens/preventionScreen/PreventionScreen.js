@@ -76,7 +76,7 @@ function PreventionScreen() {
             {/* Recent Projects Section */}
             <Container className='text-center'>
                 <h3 className='roboto-condensed-b'>RECENT PROJECTS/CAMPAIGNS</h3>
-                <Row>
+                <Row className='gy-3'>
                     <Col xs={12} md={6} lg={4}>
                         <div className='keynote'>
                             <img
@@ -130,7 +130,7 @@ function PreventionScreen() {
                     </Col>
                 </Row>
                 {/* Row 2 */}
-                <Row className='d-flex align-items-center justify-content-center'>
+                <Row className='d-flex align-items-center justify-content-center gy-3 mt-1'>
                     <Col xs={12} md={6} lg={4}>
                         <div className='keynote'>
                             <img
