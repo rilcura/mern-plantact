@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import AboutUsModal from './AboutUs';
 import ServicesModal from './Services';
-import CareersModal from './Careers';
 import ContactUsModal from './Contact';
 import TnCsModal from './TnCsModal';
 import PrivacyPolicyModal from './PrivacyPolicy';
@@ -33,7 +32,7 @@ function FooterGlobal() {
                         <Col lg={2}>
                             <h6>test</h6>
                             <LinkContainer activeClassName="activeNav" to="/reports">
-                                <Button variant='success px-4 py-2'>Report to us!</Button>
+                                <Button variant='success px-4 py-2'>View Reports</Button>
                             </LinkContainer>
                         </Col>
                     </Row>
@@ -59,11 +58,6 @@ function FooterGlobal() {
                                 <p>
                                     <a href='#!' className='text-reset'>
                                         <AboutUsModal />
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href='#!' className='text-reset'>
-                                        <CareersModal />
                                     </a>
                                 </p>
                                 <p>

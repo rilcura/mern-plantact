@@ -2,10 +2,8 @@ import React from 'react';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 import AboutUsModal from './AboutUs';
 import ServicesModal from './Services';
-import CareersModal from './Careers';
 import ContactUsModal from './Contact';
 import TnCsModal from './TnCsModal';
 import PrivacyPolicyModal from './PrivacyPolicy';
@@ -13,7 +11,6 @@ import './footer.css';
 import Facebook from './images/facebook.png'
 import Twitter from './images/twitter.png'
 import Youtube from './images/youtube.png'
-import { LinkContainer } from 'react-router-bootstrap';
 
 console.log(Facebook)
 console.log(Twitter)
@@ -41,11 +38,6 @@ function FooterGlobal2() {
                                 <p>
                                     <a href='#!' className='text-reset'>
                                         <AboutUsModal />
-                                    </a>
-                                </p>
-                                <p>
-                                    <a href='#!' className='text-reset'>
-                                        <CareersModal />
                                     </a>
                                 </p>
                                 <p>
