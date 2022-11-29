@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
@@ -10,48 +10,79 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../index.css'
+import { useNavigate, useParams } from 'react-router-dom';
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true };
+    case 'FETCH_SUCCESS':
+      return { ...state, loading: false };
+    case 'FETCH_FAIL':
+      return { ...state, loading: false, error: action.payload };
     case 'UPDATE_REQUEST':
       return { ...state, loadingUpdate: true };
     case 'UPDATE_SUCCESS':
       return { ...state, loadingUpdate: false };
     case 'UPDATE_FAIL':
       return { ...state, loadingUpdate: false };
-
     default:
       return state;
   }
 };
 
 export default function ProfileScreen() {
-  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const [{ loading, error, loadingUpdate }, dispatch] = useReducer(reducer, {
+    loading: true,
+    error: '',
+  });
+
+  const { state } = useContext(Store);
   const { userInfo } = state;
+
+  const params = useParams();
+  const { id: userId } = params;
+  const navigate = useNavigate();
+
   const [name, setName] = useState(userInfo.name);
   const [email, setEmail] = useState(userInfo.email);
   const [municipality, setMunicipality] = useState(userInfo.municipality);
   const [barangay, setBarangay] = useState(userInfo.barangay);
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [ConfirmPassword, setConfirmPassword] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  const [{ loadingUpdate }, dispatch] = useReducer(reducer, {
-    loadingUpdate: false,
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        dispatch({ type: 'FETCH_REQUEST' });
+        const { data } = await axios.get(`/api/users/${userId}`, {
+          headers: { Authorization: `Bearer ${userInfo.token}` },
+        });
+        setName(data.name);
+        setEmail(data.email);
+        setMunicipality(data.municipality);
+        setBarangay(data.barangay);
+        setPassword(data.password);
+        setIsAdmin(data.isAdmin);
+        dispatch({ type: 'FETCH_SUCCESS' });
+      } catch (err) {
+        dispatch({
+          type: 'FETCH_FAIL',
+          payload: getError(err),
+        });
+      }
+    };
+    fetchData();
+  }, [userId, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put(
-        '/api/users/profile',
-        {
-          name,
-          email,
-          municipality,
-          barangay,
-          password,
-          confirmPassword
-        },
+      dispatch({ type: 'UPDATE_REQUEST' });
+      await axios.put(
+        `/api/users/profile/${userId}`,
+        { _id: userId, name, email, municipality, barangay, password, isAdmin },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
@@ -59,14 +90,11 @@ export default function ProfileScreen() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-      localStorage.setItem('userInfo', JSON.stringify(data));
       toast.success('User updated successfully');
-    } catch (err) {
-      dispatch({
-        type: 'FETCH_FAIL',
-      });
-      toast.error(getError(err));
+      navigate('/');
+    } catch (error) {
+      toast.error(getError(error));
+      dispatch({ type: 'UPDATE_FAIL' });
     }
   };
 
@@ -100,38 +128,18 @@ export default function ProfileScreen() {
               </Form.Group>
               <Form.Group as={Col} className="mb-3" controlId="municipality">
                 <Form.Label>Municipality</Form.Label>
-                <Form.Select
+                <Form.Control
                   type="municipality"
+                  value={municipality}
                   required
                   onChange={(e) => setMunicipality(e.target.value)}>
-                  <option>Angeles</option>
-                  <option>Apalit</option>
-                  <option>Arayat</option>
-                  <option>Bacolor</option>
-                  <option>Candaba</option>
-                  <option>Floridablanca</option>
-                  <option>Guagua</option>
-                  <option>Lubao</option>
-                  <option>Mabalacat</option>
-                  <option>Macabebe</option>
-                  <option>Magalang</option>
-                  <option>Masantol</option>
-                  <option>Mexico</option>
-                  <option>Minalin</option>
-                  <option>Porac</option>
-                  <option>San Fernando</option>
-                  <option>San Luis</option>
-                  <option>San Simon</option>
-                  <option>Santa Ana</option>
-                  <option>Santa Rita</option>
-                  <option>Santo Tomas</option>
-                  <option>Sasmuan</option>
-                </Form.Select >
+                </Form.Control >
               </Form.Group >
               <Form.Group as={Col} className="mb-3" controlId="barangay">
                 <Form.Label>Barangay</Form.Label>
                 <Form.Control
                   type="barangay"
+                  value={barangay}
                   required
                   onChange={(e) => setBarangay(e.target.value)}
                 />
@@ -151,7 +159,7 @@ export default function ProfileScreen() {
                 />
               </Form.Group>
               <div className="mb-3 d-grid pt-1">
-                <Button type="submit" variant="success" size="lg" className='light-green'>Submit</Button>
+                <Button type="submit" variant="success" size="lg" className='light-green'>Update</Button>
               </div>
             </Row>
           </Form>

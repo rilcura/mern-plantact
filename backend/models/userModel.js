@@ -8,11 +8,6 @@ const userSchema = new mongoose.Schema(
     barangay: { type: String, required: true },
     password: { type: String, required: true },
     isAdmin: { type: Boolean, default: false, required: true },
-    // poster: {
-    //   name: String,
-    //   logo: String,
-    //   description: String,
-    //   isApproved: { type: Boolean, default: false },
   },
   {
     timestamps: true,

@@ -163,7 +163,7 @@ export default function ProductEditScreen() {
               <Form.Label>Location</Form.Label>
               <Form.Control
                 value={location}
-                onChange={(e) => setDate(e.target.value)}
+                onChange={(e) => setLocation(e.target.value)}
                 required
               />
             </Form.Group>
