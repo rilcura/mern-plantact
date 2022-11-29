@@ -109,8 +109,8 @@ export default function UserListScreen() {
                   <th>ID</th>
                   <th>NAME</th>
                   <th>EMAIL</th>
-                  <th>MUNICIPALITY</th>
-                  <th>BARANGAY</th>
+                  {/* <th>MUNICIPALITY</th>
+                  <th>BARANGAY</th> */}
 
                   <th>ACTIONS</th>
                 </tr>
@@ -121,8 +121,8 @@ export default function UserListScreen() {
                     <td>{user._id}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
-                    <td>{user.municipality}</td>
-                    <td>{user.barangay}</td>
+                    {/* <td>{user.municipality}</td>
+                    <td>{user.barangay}</td> */}
                     <td>
                       <Button
                         type="button"
