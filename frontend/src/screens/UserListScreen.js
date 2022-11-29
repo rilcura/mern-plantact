@@ -112,7 +112,7 @@ export default function UserListScreen() {
                   {/* <th>MUNICIPALITY</th>
                   <th>BARANGAY</th> */}
 
-                  <th>ACTIONS</th>
+                  {/* <th>ACTIONS</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -123,7 +123,7 @@ export default function UserListScreen() {
                     <td>{user.email}</td>
                     {/* <td>{user.municipality}</td>
                     <td>{user.barangay}</td> */}
-                    <td>
+                    {/* <td>
                       <Button
                         type="button"
                         variant="light"
@@ -139,7 +139,7 @@ export default function UserListScreen() {
                       >
                         Delete
                       </Button>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>
