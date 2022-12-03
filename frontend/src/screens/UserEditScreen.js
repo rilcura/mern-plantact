@@ -47,7 +47,9 @@ export default function UserEditScreen() {
   const [email, setEmail] = useState('');
   const [municipality, setMunicipality] = useState('');
   const [barangay, setBarangay] = useState('');
+  const [validId, setValidId] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,7 +62,9 @@ export default function UserEditScreen() {
         setEmail(data.email);
         setMunicipality(data.municipality);
         setBarangay(data.barangay);
+        setValidId(data.validId);
         setIsAdmin(data.isAdmin);
+        setIsVerified(data.isVerified);
         dispatch({ type: 'FETCH_SUCCESS' });
       } catch (err) {
         dispatch({
@@ -78,7 +82,7 @@ export default function UserEditScreen() {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
         `/api/users/${userId}`,
-        { _id: userId, name, email, municipality, barangay, isAdmin },
+        { _id: userId, name, email, municipality, barangay, validId, isAdmin, isVerified },
         {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
@@ -96,9 +100,9 @@ export default function UserEditScreen() {
   return (
     <Container fluid className="login-image text-white vh-100 d-flex align-items-center justify-content-center p-5">
       <Helmet>
-        <title>Edit User ${userId}</title>
+        <title>View User ${userId}</title>
       </Helmet>
-      <h1>Edit User</h1>
+      <h1>View User</h1>
       <Container className='large-container p-4 rounded'>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -144,6 +148,17 @@ export default function UserEditScreen() {
               />
             </Form.Group>
 
+            <Form.Group className="mb-3" controlId="validId">
+              {/* <Form.Label>Valid ID</Form.Label> */}
+              <img
+                value={validId}
+                type="validId"
+                onChange={(e) => setValidId(e.target.value)}
+                required
+                alt='Valid ID'
+              />
+            </Form.Group>
+
             <Form.Check
               className="mb-3"
               type="checkbox"
@@ -153,9 +168,17 @@ export default function UserEditScreen() {
               onChange={(e) => setIsAdmin(e.target.checked)}
             />
 
+            <Form.Check
+              className="mb-3"
+              type="checkbox"
+              id="isVerified"
+              label="isVerified"
+              checked={isVerified}
+              onChange={(e) => setIsVerified(e.target.checked)}
+            />
             <div className="mb-3">
               <Button disabled={loadingUpdate} type="submit">
-                Update
+                Verify
               </Button>
               {loadingUpdate && <LoadingBox></LoadingBox>}
             </div>

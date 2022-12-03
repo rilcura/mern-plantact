@@ -61,7 +61,8 @@ function ShopScreen() {
                             <MessageBox variant="danger">{error}</MessageBox>
                         ) : (
                             <div className='min-vh-100'>
-                                <Row className='d-flex justify-content-center'>
+                                <Row >
+                                    {/* className='d-flex justify-content-center' */}
                                     {products.map((product) => (
                                         <Col key={product._id} sm={6} md={4} lg={3} xxl={3} style={{ height: '370px' }}>
                                             <Product product={product}></Product>

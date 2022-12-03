@@ -117,7 +117,7 @@ export default function SignupScreen() {
                   <option >Mexico</option>
                   <option >Minalin</option>
                   <option >Porac</option>
-                  <option>San Fernando</option>
+                  <option >San Fernando</option>
                   <option >San Luis</option>
                   <option >San Simon</option>
                   <option >Santa Ana</option>

@@ -111,8 +111,8 @@ export default function UserListScreen() {
                   <th>EMAIL</th>
                   {/* <th>MUNICIPALITY</th>
                   <th>BARANGAY</th> */}
-
-                  <th>ACTIONS</th>
+                  <th>Verified</th>
+                  <th className='text-center'>ACTIONS</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,17 +121,18 @@ export default function UserListScreen() {
                     <td>{user._id}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
-                    {/* <td>{user.municipality}</td>
-                    <td>{user.barangay}</td> */}
-                    <td>
-                      {/* <Button
+                    {/* <td>{user.municipality}</td> */}
+                    {/* <td>{user.barangay}</td> */}
+                    <td >{user.isVerified ? 'YES' : 'NO'}</td>
+                    <td className='text-center'>
+                      {<Button
                         type="button"
                         variant="light"
                         onClick={() => navigate(`/admin/user/${user._id}`)}
                       >
-                        Edit
-                      </Button> */}
-                      {/* &nbsp; */}
+                        View
+                      </Button>}
+
                       <Button
                         type="button"
                         variant="light"

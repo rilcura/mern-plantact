@@ -45,6 +45,7 @@ userRouter.put(
       user.municipality = req.body.municipality || user.municipality;
       user.barangay = req.body.barangay || user.barangay;
       user.isAdmin = Boolean(req.body.isAdmin);
+      user.isVerified = Boolean(req.body.isVerified);
       const updatedUser = await user.save();
       res.send({ message: 'User Updated', user: updatedUser });
     } else {
@@ -85,6 +86,7 @@ userRouter.post(
           name: user.name,
           email: user.email,
           isAdmin: user.isAdmin,
+          isVerified: user.isVerified,
           token: generateToken(user),
         });
         return;
@@ -113,6 +115,7 @@ userRouter.post(
       municipality: user.municipality,
       barangay: user.barangay,
       isAdmin: user.isAdmin,
+      isVerified: user.isVerified,
       token: generateToken(user),
     });
   })
@@ -141,6 +144,7 @@ userRouter.put(
         municipality: updatedUser.municipality,
         barangay: updatedUser.barangay,
         isAdmin: updatedUser.isAdmin,
+        isVerified: updatedUser.isVerified,
         token: generateToken(updatedUser),
       });
     } else {

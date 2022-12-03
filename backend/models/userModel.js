@@ -6,8 +6,10 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     municipality: { type: String, required: true },
     barangay: { type: String, required: true },
+    validId: { type: String },
     password: { type: String, required: true },
     isAdmin: { type: Boolean, default: false, required: true },
+    isVerified: { type: Boolean, default: false },
   },
   {
     timestamps: true,
