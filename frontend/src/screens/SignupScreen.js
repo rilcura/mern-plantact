@@ -6,18 +6,20 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Helmet } from 'react-helmet-async';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import '../index.css'
 import TnCsModal from '../components/footer/TnCsModal';
+import ReCaptcha from "react-google-recaptcha"
 
 export default function SignupScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   const redirect = redirectInUrl ? redirectInUrl : '/';
+  const captchaRef = useRef(null)
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -28,8 +30,19 @@ export default function SignupScreen() {
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
+
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
+
+    await Axios.post('/api/users/post', { token })
+      .then(res => console.log(res))
+      .catch((error) => {
+        console.log(error);
+      })
+
     if (password !== confirmPassword) {
       toast.error('Passwords do not match');
       return;
@@ -137,9 +150,16 @@ export default function SignupScreen() {
 
               </Form.Group>
 
+
+
               <div className="my-2 d-grid">
                 <Button type="submit" variant="success" size="" className='light-green'>Create account</Button>
               </div>
+
+              <ReCaptcha
+                sitekey={process.env.REACT_APP_SITE_KEY}
+                ref={captchaRef}
+              />
 
               <div className='d-flex justify-content-between'>
                 <Form.Group className="my-2 d-flex align-items-center">
@@ -151,6 +171,7 @@ export default function SignupScreen() {
                     className='me-1'
                   />
                   Agree  to<TnCsModal />
+
 
                 </Form.Group>
 

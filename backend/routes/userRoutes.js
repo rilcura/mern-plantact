@@ -121,6 +121,23 @@ userRouter.post(
   })
 );
 
+userRouter.post("/post", async (req, res) => {
+  //Destructuring response token from request body
+  const { token } = req.body;
+
+  //sends secret key and response token to google
+  await userRouter.post(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_KEY}&response=${token}`
+  );
+
+  //check response status and send back to the client-side
+  if (res.status(200)) {
+    res.send("Human 👨 👩");
+  } else {
+    res.send("Robot 🤖");
+  }
+});
+
 // Check profile
 userRouter.put(
   '/profile/:id',
