@@ -106,9 +106,8 @@ button.thumbnail {
 
 /* Login page */
 .login-image {
-  background-image: url(./components/carousel/images/c3.png);
-  height: 100%;
-  background-repeat: no-repeat;
+  background-image: url(./screens/homeScreen/images/home2.jpg);
+  background-repeat: repeat;
   background-size: cover;
   background-attachment: fixed;
 }

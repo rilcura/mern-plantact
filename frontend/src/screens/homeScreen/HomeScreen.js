@@ -31,7 +31,7 @@ function HomeScreen() {
       </Helmet>
       <DarkVariantExample />
 
-      <div className='text-center py-2'>
+      <div className='text-center py-2 d-sm-none d-md-block'>
         <iframe width="1120" height="480" src="https://www.youtube.com/embed/hZwj5CGDQOo" title="Kung Walang Aksaya, Masaya!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
