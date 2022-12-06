@@ -16,6 +16,7 @@ import SupportEngine from '../../components/SupportChat/SupportEngine/index.js';
 import SafetyModal from './modals/SafetyModal.js';
 import FactsModal from './modals/FactsModal.js';
 import PatrolModal from './modals/PatrolModal.js';
+import YoutubeEmbed from '../../components/YoutubeEmbed.js';
 
 console.log(home1)
 console.log(home2)
@@ -30,6 +31,11 @@ function HomeScreen() {
         <title>PlantAct</title>
       </Helmet>
       <DarkVariantExample />
+
+      <div className='text-center py-2'>
+        <iframe width="1120" height="480" src="https://www.youtube.com/embed/hZwj5CGDQOo" title="Kung Walang Aksaya, Masaya!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
       <Container>
         <h3 className='pt-3 border-bottom'>Home</h3>
       </Container>
@@ -81,6 +87,7 @@ function HomeScreen() {
           </Col>
         </Row>
       </Container>
+
       <Container className='pt-4'>
         <a href='https://www.facebook.com/DENR3Official' target="_blank" rel="noreferrer" className='text-primary'>
           <img

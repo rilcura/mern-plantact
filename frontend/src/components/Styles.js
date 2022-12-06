@@ -12,8 +12,8 @@ height: 2500px;
 
 export const Button = styled.div`
 position: fixed;
-bottom: 20px;
-left: 49%;
+bottom: 35px;
+right: 2%;
 z-index: 50;
 font-size: 3rem;
 cursor: pointer;

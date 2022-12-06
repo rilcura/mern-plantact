@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Store } from '../Store';
@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../index.css'
+import ReCaptcha from "react-google-recaptcha"
 
 export default function SigninScreen() {
   const navigate = useNavigate();
@@ -18,11 +19,21 @@ export default function SigninScreen() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const captchaRef = useRef(null)
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
   const submitHandler = async (e) => {
     e.preventDefault();
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
+
+    await Axios.post('/api/users/post', { token })
+      .then(res => console.log(res))
+      .catch((error) => {
+        console.log(error);
+      })
+
     try {
       const { data } = await Axios.post('/api/users/signin', {
         email,
@@ -69,13 +80,19 @@ export default function SigninScreen() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
+
             <div className="mb-3 d-grid">
               <Button type="submit" variant='success' size="lg" className='light-green'>Sign In</Button>
             </div>
-            <div className="mb-3">
+            <ReCaptcha
+              sitekey={process.env.REACT_APP_SITE_KEY}
+              ref={captchaRef}
+            />
+            <div className="mb-2 pt-2">
               Don't Have an account?{' '}
               <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
             </div>
+
           </Form>
         </div>
       </Container>
