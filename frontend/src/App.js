@@ -28,10 +28,13 @@ import SignupScreen from './screens/SignupScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { BsPersonCircle } from 'react-icons/bs';
 import SupportAdmin from './components/SupportChat/SupportAdmin';
+import ProcessingScreen from './screens/ProcessingScreen';
+import VerificationScreen from './screens/VerificationScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
+
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
@@ -39,87 +42,94 @@ function App() {
     window.location.href = '/';
   };
 
+  // useEffect(() => {
+  //   if (!userInfo || !userInfo.isVerified) {
+  //     history.push('/login');
+  //   }
+  // }, [history, userInfo]);
+
+
   return (
     <>
       <BrowserRouter>
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar bg="success" variant="dark" expand="lg">
-            <Container>
+          {userInfo ? (
+            <Navbar bg="success" variant="dark" expand="lg">
+              <Container>
 
-              <LinkContainer to="/">
-                <Navbar.Brand className='font-logo '>PlantAct</Navbar.Brand>
-              </LinkContainer>
+                <LinkContainer to="/home">
+                  <Navbar.Brand className='font-logo '>PlantAct</Navbar.Brand>
+                </LinkContainer>
 
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
 
-                <Nav className="w-100 px-2 me-auto justify-content-end">
+                  <Nav className="w-100 px-2 me-auto justify-content-end">
 
-                  <LinkContainer activeClassName="activeNav" to="/">
-                    <Navbar.Brand>Home</Navbar.Brand>
-                  </LinkContainer>
-                  <LinkContainer activeClassName="activeNav" to="/news">
-                    <Navbar.Brand>News</Navbar.Brand>
-                  </LinkContainer>
-                  <LinkContainer activeClassName="activeNav" to="/services">
-                    <Navbar.Brand>Services</Navbar.Brand>
-                  </LinkContainer>
-                  <LinkContainer activeClassName="activeNav" to="/preventions">
-                    <Navbar.Brand>Preventions</Navbar.Brand>
-                  </LinkContainer>
-                  <LinkContainer activeClassName="activeNav" to="/reports">
-                    <Navbar.Brand>Reports</Navbar.Brand>
-                  </LinkContainer>
+                    <LinkContainer activeClassName="activeNav" to="/home">
+                      <Navbar.Brand>Home</Navbar.Brand>
+                    </LinkContainer>
+                    <LinkContainer activeClassName="activeNav" to="/news">
+                      <Navbar.Brand>News</Navbar.Brand>
+                    </LinkContainer>
+                    <LinkContainer activeClassName="activeNav" to="/services">
+                      <Navbar.Brand>Services</Navbar.Brand>
+                    </LinkContainer>
+                    <LinkContainer activeClassName="activeNav" to="/preventions">
+                      <Navbar.Brand>Preventions</Navbar.Brand>
+                    </LinkContainer>
+                    <LinkContainer activeClassName="activeNav" to="/reports">
+                      <Navbar.Brand>Reports</Navbar.Brand>
+                    </LinkContainer>
 
-                  {userInfo ? (
-                    <>
-                      <NavDropdown title={<BsPersonCircle />}>
-                        <LinkContainer to="/profile">
-                          <NavDropdown.Item>Profile</NavDropdown.Item>
-                        </LinkContainer>
-                        <NavDropdown.Divider />
-                        <Link
-                          className="dropdown-item"
-                          to="#signout"
-                          onClick={signoutHandler}
-                        >
-                          Sign Out
-                        </Link>
-                      </NavDropdown>
-                    </>
-                  ) : (
-                    <Link className="nav-link" to="/signin">
-                      Sign In
-                    </Link>
-                  )}
-                  {userInfo && userInfo.isAdmin && (
-                    <NavDropdown title='Admin' id="admin-nav-dropdown">
-                      <LinkContainer to="/admin/users">
-                        <NavDropdown.Item>Users</NavDropdown.Item>
+
+
+                    <NavDropdown title={<BsPersonCircle />}>
+                      <LinkContainer to="/profile">
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/support">
-                        <NavDropdown.Item>SupportChat</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/admin/products">
-                        <NavDropdown.Item>Posts</NavDropdown.Item>
-                      </LinkContainer>
+                      <NavDropdown.Divider />
+                      <Link
+                        className="dropdown-item"
+                        to="#signout"
+                        onClick={signoutHandler}
+                      >
+                        Sign Out
+                      </Link>
                     </NavDropdown>
-                  )}
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
+                    {userInfo && userInfo.isAdmin && (
+                      <NavDropdown title='Admin' id="admin-nav-dropdown">
+                        <LinkContainer to="/admin/users">
+                          <NavDropdown.Item>Users</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/support">
+                          <NavDropdown.Item>SupportChat</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to="/admin/products">
+                          <NavDropdown.Item>Posts</NavDropdown.Item>
+                        </LinkContainer>
+                      </NavDropdown>
+                    )}
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          ) : (
+            <></>
+          )}
         </header>
+
         {/* Navbar start */}
         <main>
-
           <Routes>
             <Route path="/news" element={<NewScreen />} />
             <Route path="/services" element={<ServiceScreen />} />
             <Route path="/preventions" element={<PreventionScreen />} />
-            <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/" element={<SigninScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
+            <Route path="/verification" element={<ProtectedRoute><VerificationScreen /></ProtectedRoute>} />
+            <Route path="/processing" element={<ProtectedRoute><ProcessingScreen /></ProtectedRoute>} />
             <Route
               path="/profile"
               element={
@@ -172,13 +182,15 @@ function App() {
               }
             ></Route>
 
-            <Route path="/" element={<HomeScreen />} />
+            <Route path="/home" element={<HomeScreen />} />
             <Route path="/reports" element={<ShopScreen />} />
           </Routes>
 
         </main>
         {/* Navbar end */}
       </BrowserRouter >
+
+
     </>
   )
 }

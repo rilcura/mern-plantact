@@ -14,7 +14,7 @@ export default function SigninScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
-  const redirect = redirectInUrl ? redirectInUrl : '/';
+  const redirect = redirectInUrl ? redirectInUrl : '/home';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,7 +30,7 @@ export default function SigninScreen() {
       });
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate(redirect || '/');
+      navigate(redirect || '/home');
     } catch (err) {
       toast.error(getError(err));
     }
@@ -73,7 +73,7 @@ export default function SigninScreen() {
               <Button type="submit" variant='success' size="lg" className='light-green'>Sign In</Button>
             </div>
             <div className="mb-3">
-              New user?{' '}
+              Don't Have an account?{' '}
               <Link to={`/signup?redirect=${redirect}`}>Create your account</Link>
             </div>
           </Form>

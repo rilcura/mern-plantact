@@ -57,7 +57,7 @@ export default function SignupScreen() {
       });
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate(redirect || '/');
+      navigate(redirect || '/processing');
     } catch (err) {
       toast.error(getError(err));
     }
@@ -150,8 +150,6 @@ export default function SignupScreen() {
 
               </Form.Group>
 
-
-
               <div className="my-2 d-grid">
                 <Button type="submit" variant="success" size="" className='light-green'>Create account</Button>
               </div>
@@ -177,7 +175,7 @@ export default function SignupScreen() {
 
                 <div className="mt-3">
                   Already have an account?{' '}
-                  <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+                  <Link to={`/?redirect=${redirect}`}>Sign-In</Link>
                 </div>
               </div>
             </Row>
