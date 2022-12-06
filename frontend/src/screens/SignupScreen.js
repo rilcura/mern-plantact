@@ -33,7 +33,6 @@ export default function SignupScreen() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-
     const token = captchaRef.current.getValue();
     captchaRef.current.reset();
 
@@ -57,7 +56,7 @@ export default function SignupScreen() {
       });
       ctxDispatch({ type: 'USER_SIGNIN', payload: data });
       localStorage.setItem('userInfo', JSON.stringify(data));
-      navigate(redirect || '/processing');
+      navigate(redirect || '/home');
     } catch (err) {
       toast.error(getError(err));
     }

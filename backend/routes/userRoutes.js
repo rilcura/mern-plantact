@@ -80,7 +80,7 @@ userRouter.post(
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
-      if (bcrypt.compareSync(req.body.password, user.password) && user.isVerified === true) {
+      if (bcrypt.compareSync(req.body.password, user.password)) {
         res.send({
           _id: user._id,
           name: user.name,
@@ -90,8 +90,6 @@ userRouter.post(
           token: generateToken(user),
         });
         return;
-      } else {
-        res.redirect('/error/404');
       }
     }
     res.status(401).send({ message: 'Invalid email or password' });

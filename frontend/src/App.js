@@ -28,8 +28,6 @@ import SignupScreen from './screens/SignupScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { BsPersonCircle } from 'react-icons/bs';
 import SupportAdmin from './components/SupportChat/SupportAdmin';
-import ProcessingScreen from './screens/ProcessingScreen';
-import VerificationScreen from './screens/VerificationScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -82,9 +80,6 @@ function App() {
                     <LinkContainer activeClassName="activeNav" to="/reports">
                       <Navbar.Brand>Reports</Navbar.Brand>
                     </LinkContainer>
-
-
-
                     <NavDropdown title={<BsPersonCircle />}>
                       <LinkContainer to="/profile">
                         <NavDropdown.Item>Profile</NavDropdown.Item>
@@ -128,8 +123,7 @@ function App() {
             <Route path="/preventions" element={<PreventionScreen />} />
             <Route path="/" element={<SigninScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
-            <Route path="/verification" element={<ProtectedRoute><VerificationScreen /></ProtectedRoute>} />
-            <Route path="/processing" element={<ProtectedRoute><ProcessingScreen /></ProtectedRoute>} />
+            <Route path="/signup" element={<SignupScreen />} />
             <Route
               path="/profile"
               element={
@@ -189,8 +183,6 @@ function App() {
         </main>
         {/* Navbar end */}
       </BrowserRouter >
-
-
     </>
   )
 }
